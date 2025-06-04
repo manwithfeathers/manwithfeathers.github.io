@@ -1,7 +1,7 @@
 <html>
 <head>
 <!--import tones js -->
-<script src="https://unpkg.com/tone"></script>
+
 </head>
 
 <body>
@@ -9,28 +9,7 @@
   <p>testing out github pages<br>
   My main website is <a href="https://danelaw.pythonanywhere.com/" target="_blank">here</a></p>
   <img src="https://i1.sndcdn.com/visuals-000000170854-AggKZx-t1240x260.jpg" width="800" alt="medieval tent from dane law album art"/><br>
-  <button id="start">boop</button>
-
-  <script>
-    // quick synth
-    const synth = new Tone.Synth().toDestination();
   
-
-    //start function that waits for tone to be started
-
-    let start = () => {
-     
-      synth.triggerAttackRelease("C3", "8n");
-    }
-
-    // listen to the button when the dom is loaded
-  document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("start").addEventListener("click", async function() {
-    await Tone.start();
-    start();
-  });
-    
-</script>
 
 
 </body>
