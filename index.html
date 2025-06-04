@@ -1,6 +1,6 @@
 <html>
 <head>
-//import tones js
+/* import tones js */
 <script src="http://unpkg.com/tone"></script>
 </head>
 
@@ -12,14 +12,18 @@
   <button id="start">boop</button>
 
   <script>
+    // quick synth
     const synth = new Tone.Synth().toDestination();
     synth.toMaster();
+
+    //start function that waits for tone to be started
 
     let start = async () => {
       await Tone.start();
       synth.triggerAttackRelease("C3", "8n");
     }
-    
+
+    // listen to the button when the dom is loaded
     document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("start").addEventListener("click", start);
       });
