@@ -18,12 +18,19 @@
 
     //start function that waits for tone to be started
 
-    let start = async () => {
-      await Tone.start();
+    let start = () => {
+     
       synth.triggerAttackRelease("C3", "8n");
     }
 
     // listen to the button when the dom is loaded
+  document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("start").addEventListener("click", async function() {
+    await Tone.start();
+    start();
+  });
+    
+</script>
     document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("start").addEventListener("click", start);
       });
