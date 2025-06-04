@@ -1,10 +1,32 @@
 <html>
+<head>
+//import tones js
+<script src="http://unpkg.com/tone"></script>
+</head>
 
 <body>
   <h1>Adam Parkinson</h1>
   <p>testing out github pages<br>
   My main website is <a href="https://danelaw.pythonanywhere.com/" target="_blank">here</a></p>
   <img src="https://i1.sndcdn.com/visuals-000000170854-AggKZx-t1240x260.jpg" width="800" alt="medieval tent from dane law album art"/>
+  <button id="start">boop</button>
+
+  <script>
+    const synth = new Tone.Synth().toDestination();
+    synth.toMaster();
+
+    let start = async () => {
+      await Tone.start();
+      synth.triggerAttackRelease("C3", "8n");
+    }
+    
+    document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("startbutton").addEventListener("click", startSeq);
+      });
+
+    
+  </script>
+
 </body>
 
 </html>
